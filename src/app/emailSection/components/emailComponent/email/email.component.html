@@ -1,0 +1,58 @@
+<p>email works!</p>
+<div class="modal-container">
+    <div (click)="dismiss()" class="close-modal" role="cancel">
+        <div class="cross-wrapper">
+            <div class="cross1"></div>
+            <div class="cross2"></div>
+        </div>
+    </div>
+    <form
+
+        class="email-form"
+    >
+        <div class="form-group">
+            <label for="from">Email</label>
+            <input
+                type="email"
+                class="form-control"
+                name="Email"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+                formControlName="from"
+                ngModel
+            />
+        </div>
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+                type="text"
+                class="form-control"
+                name="Subject"
+                placeholder="Subject"
+                formControlName="subject"
+                ngModel
+            />
+        </div>
+        <div class="form-group">
+            <label for="text">Message</label>
+            <textarea
+                class="form-control"
+                formControlName="text"
+                name="text"
+                cols="10"
+                maxlength="1000"
+                placeholder="Write your message here"
+                ngModel
+            ></textarea>
+        </div>
+        <button
+            type="submit"
+            class="email-button"
+            [disabled]="!FormData.valid"
+            role="submit"
+        >
+            Submit
+        </button>
+    </form>
+</div>
+<!--         #myform = "ngForm" (ngSubmit) = "onSubmit(myform)" -->
