@@ -74,7 +74,6 @@ export class Project {
     public set titleOne(value: string) {
         this.title = value;
     }
-
     
     public get titleTwo() {
         return this.title_second;
@@ -145,6 +144,7 @@ export class Project {
     public set creationDate(value: Date) {
         this.created_at = value;
     }
+    
     public get projectBadges() {
         return this.badge
     }

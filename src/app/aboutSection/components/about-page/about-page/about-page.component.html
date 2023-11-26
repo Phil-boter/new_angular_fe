@@ -1,0 +1,25 @@
+<p>about-page works!</p>
+    
+
+@if(innerHTML && !isLoading ){ 
+    @if(innerHTML && !isLoading ){ 
+        @switch (isGerman) {
+            @case (isGerman) {
+                <div style="color: black" [innerHTML]="innerHTML.germanInfoText" ></div>
+            }
+            @case (!isGerman) {
+                <div style="color: black" [innerHTML]="innerHTML.englishInfoText"></div>
+            }
+            @default {
+                <div style="color: black" [innerHTML]="innerHTML.englishInfoText"></div>
+            }
+        }
+        
+    }
+}
+@else {
+    <div>loading</div>
+}
+    
+
+

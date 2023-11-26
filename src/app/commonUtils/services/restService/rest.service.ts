@@ -9,8 +9,8 @@ import { LanguageService } from '../languageService/language.service';
   providedIn: 'root'
 })
 export class RestService {
-    //private readonly baseURL: string = 'http://localhost:3500';
-    private readonly baseURL: string = environment.API_URL;
+    private readonly baseURL: string = 'http://localhost:3500';
+    //private readonly baseURL: string = environment.API_URL;
 
   constructor(
     private http: HttpClient,
@@ -20,7 +20,6 @@ export class RestService {
 
 
   public get restConnection():string {
-    console.log("base", this.baseURL);
     return this.baseURL;
   }
 }
