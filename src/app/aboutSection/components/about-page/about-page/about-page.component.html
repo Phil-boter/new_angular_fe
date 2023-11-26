@@ -14,6 +14,12 @@
                 <div style="color: black" [innerHTML]="innerHTML.englishInfoText"></div>
             }
         }
+
+        @for (badge of badges; track $index) {
+            <p>{{getBadgeColor(badge)}}</p>
+            <p>{{getBadgeLogo(badge)}}</p>
+            <p>__________________________</p>
+        }
         
     }
 }

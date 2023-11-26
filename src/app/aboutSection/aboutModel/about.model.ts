@@ -52,11 +52,19 @@ export class About {
         this.info_text_en = value;
     }
 
-    public get badgest() {
+    public get knowledgeBadges() {
         return this.badges;
     }
-    public set badgest(value: []) {
+    public set knowledgeBadges(value: []) {
         this.badges = value;
+    }
+
+    public static badgeColor (badge: Object) {
+        return Object.values(badge)[1];
+    }
+  
+    public static badgeLogo (badge: Object) {
+        return Object.values(badge)[0];
     }
 
     public get creationDate() {

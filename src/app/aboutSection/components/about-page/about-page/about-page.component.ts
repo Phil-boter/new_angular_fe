@@ -28,6 +28,7 @@ export class AboutPageComponent {
   public isMobile: boolean = false;
   public isGerman: boolean = this.languageService.languageInBrowser();
   public innerHTML: About | undefined;
+  public badges= [];
 
   public aboutInformation!: About[];
 
@@ -50,6 +51,7 @@ export class AboutPageComponent {
         console.log(this.aboutInformation)
         if(this.aboutInformation) {
           this.innerHTML = this.aboutInformation[0]
+          this.badges = this.aboutInformation[0].knowledgeBadges;
           this.isLoading = false;
         }
     });
@@ -61,6 +63,15 @@ export class AboutPageComponent {
     ngDoCheck() {
       this.isMobile = this.resizeService.isMobile();
     }
+
+    getBadgeColor(badge: Object) {
+      return About.badgeColor(badge);
+    }
+
+    getBadgeLogo(badge: Object) {
+      return About.badgeLogo(badge);
+    }
+  
   
     ngOnDestroy() {
       this.isLoading = false;
