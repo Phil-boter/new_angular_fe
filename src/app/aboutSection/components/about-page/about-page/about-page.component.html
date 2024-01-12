@@ -5,27 +5,32 @@
     @if(innerHTML && !isLoading ){ 
         @switch (isGerman) {
             @case (isGerman) {
-                <div style="color: black" [innerHTML]="innerHTML.germanInfoText" ></div>
+                <div [innerHTML]="innerHTML.germanInfoText  | safeHtml"  appAppMotationObserver ></div>
             }
             @case (!isGerman) {
-                <div style="color: black" [innerHTML]="innerHTML.englishInfoText"></div>
+                <div [innerHTML]="innerHTML.englishInfoText  | safeHtml" appAppMotationObserver ></div>
             }
             @default {
-                <div style="color: black" [innerHTML]="innerHTML.englishInfoText"></div>
+                <div [innerHTML]="innerHTML.englishInfoText  | safeHtml" appAppMotationObserver ></div>
             }
-        }
-
-        @for (badge of badges; track $index) {
-            <p>{{getBadgeColor(badge)}}</p>
-            <p>{{getBadgeLogo(badge)}}</p>
-            <p>__________________________</p>
-        }
-        
-    }
+        }   
+    } 
 }
 @else {
     <div>loading</div>
 }
+
+@for (singleBadge of badges; track $index) {
+    <div style="display: flex; flex-direction: row; align-items: center;">
+        <div style="background-color: rgb(51, 51, 51); height: 50px; width: 50px;display: flex; flex-direction: row; align-items: center; justify-content: center; ">          
+            <ion-icon name={{getBadgeLogo(singleBadge)}} color={{getBadgeColor(singleBadge)}}  title={{getBadgeLogo(singleBadge)}} size="large">{{getBadgeLogo(singleBadge)}}</ion-icon>
+        </div>
+        <ion-item>
+            <ion-label>{{singleBadge.label}}</ion-label>
+            <ion-badge color="primary">22k</ion-badge>
+        </ion-item>
+    </div>
+} 
     
 
 

@@ -2,7 +2,7 @@ import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { IonicModule } from '@ionic/angular';
+import { IonBadge, IonItem, IonicModule } from '@ionic/angular';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { routes } from './app.routes';
@@ -23,7 +23,6 @@ export const appConfig: ApplicationConfig = {
           preventDuplicates: true,
           newestOnTop: true,
       }),
-      IonicModule.forRoot(),
       ReactiveFormsModule
     ),    
   ]

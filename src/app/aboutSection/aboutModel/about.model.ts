@@ -59,14 +59,6 @@ export class About {
         this.badges = value;
     }
 
-    public static badgeColor (badge: Object) {
-        return Object.values(badge)[1];
-    }
-  
-    public static badgeLogo (badge: Object) {
-        return Object.values(badge)[0];
-    }
-
     public get creationDate() {
         return this.created_at;
     }
