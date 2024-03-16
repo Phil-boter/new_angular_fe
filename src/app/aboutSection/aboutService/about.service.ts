@@ -20,15 +20,15 @@ export class AboutService {
     private languageService: LanguageService
   ){}
 
-  public about$ = this.http.get<{ rows: About}>(`${this.restService.restConnection}/v1/about/getAboutInfo`)
+  public about$ = this.http.get<About>(`${this.restService.restConnection}/v1/about/getAboutInfo`)
   .pipe(
       map((data:any) => (
-        data.rows.map((item: About) => (
+        data.map((item: About) => (
           About.createAboutInformation(item))
     ))
     ),
       catchError(err => {
-          return this.errorService.errorHandler(err, this.languageService.languageInBrowser() ? 'Projekte konnten nicht geladen werden' : 'Unable to load projects');
+          return this.errorService.errorHandler(err, this.languageService.languageInBrowser() ? 'Informationen konnten nicht geladen werden' : 'Unable to load informations');
        }),
       shareReplay(1),
   ); 

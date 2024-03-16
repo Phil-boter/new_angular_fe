@@ -2,13 +2,14 @@ import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { IonBadge, IonItem, IonicModule } from '@ionic/angular';
+import { IonBadge, IonItem, IonicModule, ModalController } from '@ionic/angular';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
+import { provideIonicAngular } from '@ionic/angular/standalone';
 
 export const appConfig: ApplicationConfig = {
   providers:[
@@ -23,7 +24,8 @@ export const appConfig: ApplicationConfig = {
           preventDuplicates: true,
           newestOnTop: true,
       }),
-      ReactiveFormsModule
-    ),    
+      ReactiveFormsModule,  
+    ) ,
+    provideIonicAngular()
   ]
 };

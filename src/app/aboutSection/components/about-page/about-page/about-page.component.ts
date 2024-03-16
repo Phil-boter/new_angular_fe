@@ -14,7 +14,7 @@ import { ResizeService } from '../../../../commonUtils/services/resizeService/re
 // models
 import { About } from '../../../aboutModel/about.model';
 
-import { IonBadge, IonIcon, IonButton, IonLabel, IonItem} from '@ionic/angular/standalone';
+import { IonBadge, IonIcon, IonButton, IonLabel, IonItem, IonList} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logoAngular, logoCss3, logoHtml5, logoReact, logoJavascript, logoNodejs, logoFirebase, logoGithub } from 'ionicons/icons';
 import { SafeHtmlPipe } from "../../../../pipes/safe-html.pipe";
@@ -24,7 +24,7 @@ import { SafeHtmlPipe } from "../../../../pipes/safe-html.pipe";
     standalone: true,
     templateUrl: './about-page.component.html',
     styleUrl: './about-page.component.scss',
-    imports: [CommonModule, IonIcon, IonBadge, IonLabel, IonItem,SafeHtmlPipe]
+    imports: [CommonModule, IonIcon, IonBadge, IonLabel, IonItem,SafeHtmlPipe, IonList]
 })
 export class AboutPageComponent {
 
@@ -71,6 +71,7 @@ export class AboutPageComponent {
     }
 
     ngAfterViewChecked() {
+      // renders button inside innerHTML and makes it clickable
       if(this.elRef.nativeElement.querySelector("button")){
         this.elRef.nativeElement.querySelector("button").addEventListener("click", () => {
           this.goToGithub();

@@ -26,10 +26,10 @@ export class ContactService {
     private languageService: LanguageService
   ){}
 
-  public about$ = this.http.get<{ rows: Contact}>(`${this.restService.restConnection}/v1/contact/getContactInfo`)
+  public about$ = this.http.get<Contact>(`${this.restService.restConnection}/v1/contact/getContactInfo`)
   .pipe(
       map((data:any) => (
-        data.rows.map((item: Contact) => (
+        data.map((item: Contact) => (
           Contact.createAboutInformation(item))
     ))
     ),

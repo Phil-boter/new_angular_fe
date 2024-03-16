@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { EmailService } from '../../../emailSection/emailService/email.service';
-//import { EmailModalComponent } from 'src/app/components/emailModal/email-modal.component';
-//import { EmailService } from '../emailService/email.service';
+import { EmailComponent } from '../../../emailSection/components/emailComponent/email/email.component';
+import { OverlayRef } from 'ngx-toastr';
 
 @Injectable({
-    providedIn: 'root',
+    providedIn: 'root'
 })
 export class ModalService {
     public FormData!: UntypedFormGroup;
@@ -16,26 +16,29 @@ export class ModalService {
         private modalCtrl: ModalController
     ) {}
 
-/*      public async openEmailModal() {
+      public async openEmailModal() {
         const modal = await this.modalCtrl.create({
             id: 'emailModalComponent',
-            component: EmailModalComponent,
+            component: EmailComponent,
             componentProps: {},
             cssClass: 'email-modal',
             backdropDismiss: true,
             showBackdrop: false,
         });
 
-        modal.present();
+    modal.present();
 
-        const data: any = await modal.onWillDismiss();
+    const data: any = await modal.onWillDismiss();
+
+        console.log(data)
+ 
         if (data.data && data.data != undefined) {
-            await this.emailService.sendEmail(data.data);
-        }
-    }  */
+            this.emailService.submitEmail(data.data.newEmail);
+        } 
+        data.preventDfault();
+    }  
 
     public async dismissModal() {
-        this.modalCtrl.dismiss();
+        this.modalCtrl.dismiss(null, 'cancel', 'emailModalComponent');
     }
 }
-

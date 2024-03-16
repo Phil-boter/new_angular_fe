@@ -24,15 +24,15 @@ export class ProjectService {
     private languageService: LanguageService
   ){}
 
-  public projects$ = this.http.get<{ rows: Project[] }>(`${this.restService.restConnection}/v1/projects/allProjects`)
+  public projects$ = this.http.get<Project[]>(`${this.restService.restConnection}/v1/projects/allProjects`)
   .pipe(
       map((data:any) => (
-          data.rows.map((item: Project) => (
+          data.map((item: Project) => (
               Project.createProject(item))
       ))
       ),
       catchError(err => {
-          return this.errorService.errorHandler(err, this.languageService.languageInBrowser() ? 'Projekte konnten nicht geladen werden' : 'Unable to load projects');
+          return this.errorService.errorHandler(err, this.languageService.languageInBrowser() ? `Projecte konnten nicht geladen werden` : `Was not able to load projects`);
        }),
       shareReplay(1),
   ); 

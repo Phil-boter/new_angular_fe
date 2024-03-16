@@ -21,16 +21,15 @@
 }
 
 @for (singleBadge of badges; track $index) {
-    <div style="display: flex; flex-direction: row; align-items: center;">
+    <ion-list style="display: flex; flex-direction: row; align-items: center;">
         <div style="background-color: rgb(51, 51, 51); height: 50px; width: 50px;display: flex; flex-direction: row; align-items: center; justify-content: center; ">          
             <ion-icon name={{getBadgeLogo(singleBadge)}} color={{getBadgeColor(singleBadge)}}  title={{getBadgeLogo(singleBadge)}} size="large">{{getBadgeLogo(singleBadge)}}</ion-icon>
         </div>
         <ion-item>
             <ion-label>{{singleBadge.label}}</ion-label>
-            <ion-badge color="primary">22k</ion-badge>
+            <ion-badge color={{getBadgeColor(singleBadge)}} >22</ion-badge>
         </ion-item>
-    </div>
+    </ion-list>
 } 
-    
 
 

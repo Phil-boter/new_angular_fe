@@ -13,27 +13,26 @@ export class Email {
     public created_at: Date;
 
     public FormData!: UntypedFormGroup;
+    static FormData: UntypedFormGroup;
 
     constructor(
         from: string,
         subject: string,
         text: string,
-        created_at: Date,
-        private builder: UntypedFormBuilder
-    ) {
+        created_at: Date    ) {
         this.from = from;
         this.subject = subject;
         this.text = text;
         this.created_at = created_at;
     }
 
-    public create(builder: UntypedFormBuilder) {
-        this.FormData = builder.group({
-            from: new UntypedFormControl('', [Validators.required]),
-            subject: new UntypedFormControl('', [Validators.required]),
-            text: new UntypedFormControl('', [Validators.required]),
-            created_at: Date.now(),
-        });
-        return this.FormData;
+    public static async createEmail(from: string, subject: string, text: string) {
+        console.log(from, subject, text)
+        return new Email(
+            from,
+            subject,
+            text, 
+            new Date
+        )
     }
 }

@@ -1,13 +1,14 @@
 <p>email works!</p>
-<div class="modal-container">
-    <div (click)="dismiss()" class="close-modal" role="cancel">
+<Button (click)="dismiss()">CLOSE</Button>
+<div class="modal-container" > 
+<!--     <div (click)="dismiss()" class="close-modal" role="cancel">
         <div class="cross-wrapper">
             <div class="cross1"></div>
             <div class="cross2"></div>
         </div>
-    </div>
+    </div> -->
     <form
-
+        [formGroup]="emailForm"
         class="email-form"
     >
         <div class="form-group">
@@ -35,6 +36,7 @@
         </div>
         <div class="form-group">
             <label for="text">Message</label>
+
             <textarea
                 class="form-control"
                 formControlName="text"
@@ -46,13 +48,16 @@
             ></textarea>
         </div>
         <button
-            type="submit"
+      
             class="email-button"
-            [disabled]="!FormData.valid"
-            role="submit"
+            [disabled]="!emailForm.valid"
+
+            (click)="onSubmit()"
         >
             Submit
         </button>
     </form>
 </div>
 <!--         #myform = "ngForm" (ngSubmit) = "onSubmit(myform)" -->
+      <!-- type="submit" -->
+                  <!-- role="submit" -->
