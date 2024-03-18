@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { ChildrenOutletContexts, RouterLink, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 // Services
 import { LanguageService } from './commonUtils/services/languageService/language.service';
 import { ResizeService } from './commonUtils/services/resizeService/resize.service';
+import { slideInAnimation } from './commonUtils/animations/animations';
 
 
 @Component({
@@ -13,7 +14,10 @@ import { ResizeService } from './commonUtils/services/resizeService/resize.servi
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    slideInAnimation
+  ]
 })
 
 
@@ -30,7 +34,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private languageService: LanguageService,
-    private resizeService: ResizeService
+    private resizeService: ResizeService,
+    private contexts: ChildrenOutletContexts
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +46,10 @@ export class AppComponent implements OnInit {
   ngDoCheck() {
     this.isMobile = this.resizeService.isMobile();
 
+  }
+
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }
 
   ngOnDestroy() {

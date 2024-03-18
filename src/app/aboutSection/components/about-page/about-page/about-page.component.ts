@@ -16,7 +16,7 @@ import { About } from '../../../aboutModel/about.model';
 
 import { IonBadge, IonIcon, IonButton, IonLabel, IonItem, IonList} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { logoAngular, logoCss3, logoHtml5, logoReact, logoJavascript, logoNodejs, logoFirebase, logoGithub } from 'ionicons/icons';
+import { logoAngular, logoCss3, logoHtml5, logoReact, logoJavascript, logoNodejs, logoFirebase, logoGithub, logoBuffer, server, serverOutline } from 'ionicons/icons';
 import { SafeHtmlPipe } from "../../../../pipes/safe-html.pipe";
 
 @Component({
@@ -47,7 +47,7 @@ export class AboutPageComponent {
     private resizeService: ResizeService,
     private aboutService: AboutService,
     private elRef:ElementRef) {
-      addIcons({ logoAngular, logoCss3, logoHtml5, logoReact, logoJavascript, logoNodejs, logoFirebase, logoGithub })
+      addIcons({ logoAngular, logoCss3, logoHtml5, logoReact, logoJavascript, logoNodejs, logoFirebase, logoGithub, logoBuffer, server, serverOutline })
     }
 
 

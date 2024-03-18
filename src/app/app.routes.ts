@@ -4,10 +4,11 @@ import { Routes } from '@angular/router';
 import { ProjectPageComponent } from './projectSection/pages/project-page/project-page.component';
 import { AboutPageComponent } from './aboutSection/components/about-page/about-page/about-page.component';
 import { ContactPageComponent } from './contactSection/components/contact-page/contact-page/contact-page.component';
-import { EmailComponent } from './emailSection/components/emailComponent/email/email.component';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-    { path: 'projects', component: ProjectPageComponent },
-    { path: 'about', component: AboutPageComponent },
-    { path: 'contact', component: ContactPageComponent}
+    { path: 'home', component: AppComponent, data: { animation: 'homeePage' }},
+    { path: 'projects', component: ProjectPageComponent , data: { animation: 'projectsPage' }},
+    { path: 'about', component: AboutPageComponent , data: { animation: 'aboutPage' }},
+    { path: 'contact', component: ContactPageComponent, data: { animation: 'contactPage' }}
 ];
