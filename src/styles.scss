@@ -29,6 +29,51 @@
 @import "~@ionic/angular/css/display.css";  */
 
 
+
+
+@font-face {
+    font-family: 'Tauri';
+    src: url('fonts/Tauri-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('fonts/Vollkorn-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vollkorn-SemiBold';
+    src: url('fonts/Vollkorn-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('fonts/Roboto-Thin.ttf') format('truetype');
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /* You can add global styles to this file, and also import other style files */
  * {
     box-sizing: border-box;
@@ -37,10 +82,39 @@
 body, html {
     margin: 0;
     padding: 0;
+    background: var(--var-color_darkgray);
+    color: var(--var-color_white);
+    font-family: "Roboto-thin", sans-serif;
 }
+
 .scroll {
     height: 100vh;
     overflow: scroll !important;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Vollkorn-SemiBold", serif;
+}
+
+.flex_center_center_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.flex_center_center_column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flex_space_around {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
 }
 
 :root {
@@ -57,6 +131,8 @@ body, html {
     --var-color_modal-header: rgb(23, 23, 23);
     --var-color_button-inset: rgba(88, 88, 88, 0.84);
 }
+
+
 
 ion-modal {
     background-color: rgba(0, 0, 0, 0.6);

@@ -1,0 +1,30 @@
+.menue_container{
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    height: 3rem;
+    background-color: transparent;
+    color: white;
+    position: fixed;
+    z-index: 1000;
+    border: 1px solid green;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    .menue_innner_container {
+        height: 100%;
+    }
+
+    .anchor_container a {
+        text-decoration: none;
+        color: var(--var-color_white);
+        margin: 0 0.3rem;
+    }
+
+    .menue_content {
+        border: 1px solid red;
+        overflow: hidden;
+        position: fixed;
+        top: 3rem;
+    }
+}

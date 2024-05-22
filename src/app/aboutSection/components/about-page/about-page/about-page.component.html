@@ -1,33 +1,34 @@
-<p>about-page works!</p>
+<div id="about_anchor">
     
-
-@if(innerHTML && !isLoading ){ 
     @if(innerHTML && !isLoading ){ 
-        @switch (isGerman) {
-            @case (isGerman) {
-                <div [innerHTML]="innerHTML.germanInfoText  | safeHtml"  appAppMotationObserver ></div>
-            }
-            @case (!isGerman) {
-                <div [innerHTML]="innerHTML.englishInfoText  | safeHtml" appAppMotationObserver ></div>
-            }
-            @default {
-                <div [innerHTML]="innerHTML.englishInfoText  | safeHtml" appAppMotationObserver ></div>
-            }
-        }   
-    } 
-}
-@else {
-    <div>loading</div>
-}
+        @if(innerHTML && !isLoading ){ 
+            @switch (isGerman) {
+                @case (isGerman) {
+                    <div [innerHTML]="innerHTML.germanInfoText  | safeHtml"  appAppMotationObserver ></div>
+                }
+                @case (!isGerman) {
+                    <div [innerHTML]="innerHTML.englishInfoText  | safeHtml" appAppMotationObserver ></div>
+                }
+                @default {
+                    <div [innerHTML]="innerHTML.englishInfoText  | safeHtml" appAppMotationObserver ></div>
+                }
+            }   
+        } 
+    }
+    @else {
+        <div>loading</div>
+    }
 
-@for (singleBadge of badges; track $index) {
-    <ion-list style="display: flex; flex-direction: row; align-items: center;">
-        <div style="background-color: rgb(51, 51, 51); height: 50px; width: 50px;display: flex; flex-direction: row; align-items: center; justify-content: center; ">          
-            <ion-icon name={{getBadgeLogo(singleBadge)}} color={{getBadgeColor(singleBadge)}}  title={{getBadgeLogo(singleBadge)}} size="large">{{getBadgeLogo(singleBadge)}}</ion-icon>
-        </div>
-        <ion-item>
-            <ion-label>{{singleBadge.label}}</ion-label>
-            <ion-badge color={{getBadgeColor(singleBadge)}} ></ion-badge>
-        </ion-item>
-    </ion-list>
-} 
+    @for (singleBadge of badges; track $index) {
+        <ion-list style="display: flex; flex-direction: row; align-items: center;">
+            <div style="background-color: rgb(51, 51, 51); height: 50px; width: 50px;display: flex; flex-direction: row; align-items: center; justify-content: center; ">          
+                <ion-icon name={{getBadgeLogo(singleBadge)}} color={{getBadgeColor(singleBadge)}}  title={{getBadgeLogo(singleBadge)}} size="large">{{getBadgeLogo(singleBadge)}}</ion-icon>
+            </div>
+            <ion-item>
+                <ion-label>{{singleBadge.label}}</ion-label>
+                <ion-badge color={{getBadgeColor(singleBadge)}} ></ion-badge>
+            </ion-item>
+        </ion-list>
+    } 
+
+</div>

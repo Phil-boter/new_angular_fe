@@ -7,12 +7,18 @@ import { Subscription } from 'rxjs';
 import { LanguageService } from './commonUtils/services/languageService/language.service';
 import { ResizeService } from './commonUtils/services/resizeService/resize.service';
 import { slideInAnimation } from './commonUtils/animations/animations';
+import { ContactPageComponent } from './contactSection/components/contact-page/contact-page/contact-page.component';
+import { ProjectPageComponent } from './projectSection/pages/project-page/project-page.component';
+import { HomePageComponent } from './homeSection/components/home-page/home-page.component';
+import { AboutPageComponent } from './aboutSection/components/about-page/about-page/about-page.component';
+import { IonApp, IonButton, IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonMenuToggle, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { MenueComponent } from './menueSection/menueComponent/menue/menue.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink],
+  imports: [CommonModule, RouterOutlet, RouterLink, ContactPageComponent, ProjectPageComponent, HomePageComponent, AboutPageComponent, MenueComponent,IonApp, IonContent, IonMenu, IonMenuToggle, IonTitle, IonButton, IonToolbar, IonHeader, IonButtons, IonMenuButton], 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
@@ -46,10 +52,6 @@ export class AppComponent implements OnInit {
   ngDoCheck() {
     this.isMobile = this.resizeService.isMobile();
 
-  }
-
-  getRouteAnimationData() {
-    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }
 
   ngOnDestroy() {

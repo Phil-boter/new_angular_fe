@@ -14,6 +14,7 @@ import { ModalService } from '../../../../commonUtils/services/modalService/moda
 // models
 import { Contact } from '../../../contactModel/contact.model';
 import { EmailComponent } from '../../../../emailSection/components/emailComponent/email/email.component';
+import { IonContent } from '@ionic/angular/standalone';
 
 
 @Component({
@@ -21,10 +22,9 @@ import { EmailComponent } from '../../../../emailSection/components/emailCompone
     standalone: true,
     templateUrl: './contact-page.component.html',
     styleUrl: './contact-page.component.scss',
-    imports: [CommonModule],
+    imports: [CommonModule, IonContent],
 })
 export class ContactPageComponent {
-  //[x: string]: any;
 
   public isLoading: boolean = false;
   public isMobile: boolean = false;

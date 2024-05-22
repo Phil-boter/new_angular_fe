@@ -3,7 +3,7 @@ import { trigger, transition, style, query, animateChild, group, animate } from 
 const ANIMATION_SPEED = "1000ms";
 
 export const slideInAnimation =
-  trigger('routeAnimations', [
+   trigger('routeAnimations', [
     transition('* => *', [
       query(":enter, :leave", style({ position: "fixed", width: "100%" })),
       group([
@@ -22,5 +22,5 @@ export const slideInAnimation =
           )
         ])
       ])
-    ])
+    ]) 
   ]);

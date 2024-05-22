@@ -14,7 +14,7 @@ import { ResizeService } from '../../../../commonUtils/services/resizeService/re
 // models
 import { About } from '../../../aboutModel/about.model';
 
-import { IonBadge, IonIcon, IonButton, IonLabel, IonItem, IonList} from '@ionic/angular/standalone';
+import { IonBadge, IonIcon, IonButton, IonLabel, IonItem, IonList, IonContent} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logoAngular, logoCss3, logoHtml5, logoReact, logoJavascript, logoNodejs, logoFirebase, logoGithub, logoBuffer, server, serverOutline } from 'ionicons/icons';
 import { SafeHtmlPipe } from "../../../../pipes/safe-html.pipe";
@@ -24,7 +24,7 @@ import { SafeHtmlPipe } from "../../../../pipes/safe-html.pipe";
     standalone: true,
     templateUrl: './about-page.component.html',
     styleUrl: './about-page.component.scss',
-    imports: [CommonModule, IonIcon, IonBadge, IonLabel, IonItem,SafeHtmlPipe, IonList]
+    imports: [CommonModule, IonIcon, IonBadge, IonLabel, IonItem,SafeHtmlPipe, IonList, IonContent]
 })
 export class AboutPageComponent {
 

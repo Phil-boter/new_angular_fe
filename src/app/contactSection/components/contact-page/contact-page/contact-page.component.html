@@ -1,25 +1,26 @@
-<p>contact-page works!</p>
-
-
-@if(innerHTML && !isLoading ){ 
+<div id="contact_anchor">  
 
     @if(innerHTML && !isLoading ){ 
-        @switch (isGerman) {
-            @case (isGerman) {
-                <div style="color: black" [innerHTML]="innerHTML.germanInfoText" ></div>
-            }
-            @case (!isGerman) {
-                <div style="color: black" [innerHTML]="innerHTML.englishInfoText"></div>
-            }
-            @default {
-                <div style="color: black" [innerHTML]="innerHTML.englishInfoText"></div>
-            }
-        }
-        
-    }
-}
-@else {
-    <div>loading</div>
-}
 
-<button (click)="openEmailModal()" style="width: 100px; height: 50px;">EMAIL</button>
+        @if(innerHTML && !isLoading ){ 
+            @switch (isGerman) {
+                @case (isGerman) {
+                    <div style="color: black" [innerHTML]="innerHTML.germanInfoText" ></div>
+                }
+                @case (!isGerman) {
+                    <div style="color: black" [innerHTML]="innerHTML.englishInfoText"></div>
+                }
+                @default {
+                    <div style="color: black" [innerHTML]="innerHTML.englishInfoText"></div>
+                }
+            }
+            
+        }
+    }
+    @else {
+        <div>loading</div>
+    }
+
+    <button (click)="openEmailModal()" style="width: 100px; height: 50px;">EMAIL</button>
+
+</div>
